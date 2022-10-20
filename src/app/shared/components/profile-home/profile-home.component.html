@@ -1,0 +1,10 @@
+
+<p-virtualScroller [value]="infos" scrollHeight="91vh" [itemSize]="150">
+    <ng-template pTemplate="header">
+        <h1>Profile</h1>
+    </ng-template>
+    <ng-template pTemplate="item" let-info>
+        <h2>{{info.title}}</h2>
+        <p>{{info.description}}</p>
+    </ng-template>
+</p-virtualScroller>

@@ -1,0 +1,39 @@
+:host::ng-deep{
+    .window{
+        margin: 0;
+        height: 100vh;
+        background: var(--color-primary);
+    }
+
+    .p-inputtext{
+        padding: 1em;
+        width: 100%;
+        border-radius: 1em;
+        background: var(--color-tertiary);
+        color: var(--text-color-lightgrey);
+        border: none;
+    }
+
+    .labelTitle{
+        color: var(--text-color-lightgrey);
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .p-button{
+        width: 100%;
+    }
+
+    .title{
+        text-align: center;
+        color: var(--text-color-lightgrey);
+        font-size: 3em;
+        font-weight: 700;
+    }
+
+    .wrong-fild{
+        font-size: 15px;
+        color: red;
+        font-weight: 700;
+    }
+}

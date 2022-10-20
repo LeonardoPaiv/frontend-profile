@@ -1,0 +1,29 @@
+:host{
+
+    .container-fluid{
+        padding: 0;
+    }
+
+    .col-sm-2.sidebar{
+        background: var(--color-primary);
+        padding: 0;
+        height: 100vh;
+    }
+
+    .col-sm-2.contact-me{
+        background: var(--color-primary);
+        padding: 0;
+        height: 100vh;
+    }  
+    
+    .col{
+        height: 95vh;
+        padding: 0;
+    }
+
+    .window{
+    margin: 0;
+    height: 100vh;
+    background: var(--color-primary);
+    }
+}
