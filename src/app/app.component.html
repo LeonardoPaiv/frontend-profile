@@ -1,13 +1,10 @@
-<div class="container-fluid min-vh-100 window">
-  <div class="row window">
-    <div class="col-sm-2 sidebar">
-      <app-sidebar></app-sidebar>
-    </div>
+<div class="container-fluid min-vh-100">
+  <div class="row menu">
+    <app-menubar></app-menubar>
+  </div>
+  <div class="row">
     <div class="col">
       <router-outlet></router-outlet>
-    </div>
-    <div class="col-sm-2 contact-me">
-      <app-contact-me></app-contact-me>
     </div>
   </div>
 </div>

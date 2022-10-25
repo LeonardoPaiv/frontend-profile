@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Components
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ProfileHomeComponent } from './components/profile-home/profile-home.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { MenubarComponent } from './components/menubar/menubar.component';
 
 //primeComponents
 import { FormsModule } from '@angular/forms';
@@ -14,17 +15,15 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
-
-
+import {SidebarModule} from 'primeng/sidebar';
 
 
 @NgModule({
   declarations: [
-    SidebarComponent,
-    ProfileHomeComponent,
+    SkillsComponent,
+    ProfileInfoComponent,
     ContactMeComponent,
+    MenubarComponent,
   ],
   imports: [
     CommonModule,
@@ -34,12 +33,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     VirtualScrollerModule,
     InputTextModule,
     InputTextareaModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SidebarModule,
   ],
   exports: [
-    SidebarComponent,
-    ProfileHomeComponent,
-    ContactMeComponent
+    SkillsComponent,
+    ProfileInfoComponent,
+    ContactMeComponent,
+    MenubarComponent
   ]
 })
 export class SharedModule { }

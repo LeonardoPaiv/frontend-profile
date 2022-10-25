@@ -1,29 +1,16 @@
-:host{
+:host {
+    .container-fluid {
+        background: rgb(255, 244, 213);
+        background: linear-gradient(180deg, rgba(255, 244, 213, 1) 0%, rgba(251, 201, 112, 1) 100%);
+    }
 
-    .container-fluid{
+    .col {
         padding: 0;
     }
 
-    .col-sm-2.sidebar{
-        background: var(--color-primary);
-        padding: 0;
-        height: 100vh;
-    }
-
-    .col-sm-2.contact-me{
-        background: var(--color-primary);
-        padding: 0;
-        height: 100vh;
-    }  
-    
-    .col{
-        height: 95vh;
-        padding: 0;
-    }
-
-    .window{
-    margin: 0;
-    height: 100vh;
-    background: var(--color-primary);
+    .menu {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
     }
 }

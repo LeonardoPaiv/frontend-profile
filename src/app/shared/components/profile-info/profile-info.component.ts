@@ -5,12 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './profile-home.component.html',
   styleUrls: ['./profile-home.component.scss']
 })
-export class ProfileHomeComponent implements OnInit {
+export class ProfileInfoComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  public display: boolean = false;
 
   public infos = [
     {title: 'PROFILE', description: 'Preencher linguiça aqui', icon: ''},
@@ -19,7 +21,6 @@ export class ProfileHomeComponent implements OnInit {
     {title: 'SHORT COURSES', description: 'Preencher linguiça aqui', icon: ''},
     {title: 'CERTIFICATES', description: 'Preencher linguiça aqui', icon: ''},
     {title: 'ACCREDITATIONS', description: 'Preencher linguiça aqui', icon: ''},
-    {title: 'MORE ABOUT ME', description: 'Preencher linguiça aqui', icon: ''},
   ]
 
 }

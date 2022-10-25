@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  selector: 'app-skills',
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SkillsComponent implements OnInit {
 
   constructor() { }
 
@@ -23,6 +23,7 @@ export class SidebarComponent implements OnInit {
   public skills: {skill: string, image: string}[] = [
     {skill: 'Typescript', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'},
     {skill: 'Angular', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg'},
+    {skill: 'NestJs', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg'},
     {skill: 'Docker', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'},
     {skill: 'Rancher', image: 'https://www.vectorlogo.zone/logos/rancher/rancher-icon.svg'},
     {skill: 'Openshift', image: 'https://www.vectorlogo.zone/logos/openshift/openshift-icon.svg'}

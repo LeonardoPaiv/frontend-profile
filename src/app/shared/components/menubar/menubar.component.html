@@ -1,0 +1,14 @@
+<p-sidebar [(visible)]="display" position="right">
+    <app-contact-me></app-contact-me>
+</p-sidebar>
+
+<div class="container-fluid p-0">
+    <div class="row menubar align-items-center">
+        <div class="col">
+            <img class="logo" src="../../../../assets/l.png" alt="L">
+        </div>
+        <div class="col text-end">
+            <p-button type="text" (click)="display = true" icon="pi pi-envelop" label="Contact-me"></p-button>
+        </div>
+    </div>
+</div>

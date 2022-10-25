@@ -1,0 +1,26 @@
+:host::ng-deep {
+
+    .containerSkill{
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        img{
+            width: auto;
+            height: auto;
+            width: 10em;
+        }
+
+        p{
+            font-size: 40px;
+            margin: 0 auto;
+        }
+    }
+
+    .profilesTitles{
+        background: var(--color-tertiary);
+        color: white;
+        padding: 0.5em;
+        border-radius: 1em;
+    }
+}
