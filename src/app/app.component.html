@@ -1,6 +1,6 @@
 <div class="container-fluid min-vh-100">
-  <div class="row menu">
-    <app-menubar></app-menubar>
+  <div [class]="!offStick ? 'menu row': 'row'">
+    <app-menubar (sidebarOn)="offStick = $event"></app-menubar>
   </div>
   <div class="row">
     <div class="col">

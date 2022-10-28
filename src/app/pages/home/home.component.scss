@@ -1,52 +1,9 @@
 :host::ng-deep{
-    .myPhoto{
-        margin: 18vh 0 0 0 ;
-        width: auto;
-        height: auto;
-        max-width: 25em;
+    .background-primary{
+        background: var(--color-primary);   
     }
 
-    .name{
-        font-size: 100px;
-        color: #495057;
-    }
-
-    .role{
-        margin-left: 4em;
-        color: #FF6D19;
-        margin-left: 1sem;
-        font-size: 70px;
-    }
-
-    .continue{
-        animation: is-bouncing 1s ease-in-out alternate infinite;
-        width: auto;
-        height: auto;
-        max-width: 5em;
-    }
-
-    @keyframes is-bouncing {
-        to{
-            transform: translateY(30px);
-        }
-    }
-
-
-    .social{
-        img{
-            margin-right: 5em;
-            margin-bottom: 5em;
-
-            width: auto;
-            height: auto;
-            max-width: 10em;
-
-            transition-property: max-width;
-            transition-duration: 0.5s;
-        }
-
-        img:hover{
-            max-width: 15em;
-        }
+    .background-secondary{
+        background: var(--color-secondary);
     }
 }

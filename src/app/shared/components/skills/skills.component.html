@@ -1,20 +1,22 @@
-<div class="container-fluid">
-    <div class="row mt-3">
-        <h3 class="profilesTitles">Soft Skills</h3>
-        <div class="col-4 mt-3" *ngFor="let softSkill of softSkills">
-            <span class="containerSkill">
-                <img [src]="softSkill.image" [alt]="softSkill.softSkill">
+<div class="row">
+    <div class="col">
+        <div class="row align-items-center text-center">
+            <h3 class="profilesTitles mt-5">Soft Skills</h3>
+            <div class="col-sm-4" *ngFor="let softSkill of softSkills">
+                <img [src]="softSkill.image" alt="skill.skill">
                 <p>{{softSkill.softSkill}}</p>
-            </span>
+            </div>
         </div>
     </div>
-    <div class="row mt-3">
-        <h3 class="profilesTitles">Skills</h3>
-        <div class="col-4 mt-3" *ngFor="let skill of skills">
-            <span class="containerSkill">
+    <div class="col">
+        <div class="row align-items-center text-center">
+            <h3 class="profilesTitles mt-5">Skills</h3>
+            <div class="col-sm-4" *ngFor="let skill of skills">
                 <img [src]="skill.image" alt="skill.skill">
                 <p>{{skill.skill}}</p>
-            </span>
+            </div>
         </div>
     </div>
 </div>
+
+

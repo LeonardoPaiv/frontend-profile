@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid mt-5 mb-5">
     <div class="row">
-        <div class="col-4" *ngFor="let info of infos">
+        <div class="col-4 color{{i}}" *ngFor="let info of infos; index as i">
             <h3 class="profilesTitles">{{info.title}}</h3>
             <p>{{info.description}}</p>
         </div>

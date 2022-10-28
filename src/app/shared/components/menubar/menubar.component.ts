@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,4 +19,14 @@ export class MenubarComponent implements OnInit {
 
   public display: boolean = false;
 
+  @Output() public sidebarOn = new EventEmitter();
+
+  public showSidebar() {
+    this.display = true
+    this.sidebarOn.emit(this.display)
+  }
+
+  public hideSidebar() {
+    this.sidebarOn.emit(false)
+  }
 }

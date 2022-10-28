@@ -6,6 +6,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 //primeComponents
 import { FormsModule } from '@angular/forms';
@@ -17,13 +19,14 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import { ReactiveFormsModule } from '@angular/forms';
 import {SidebarModule} from 'primeng/sidebar';
 
-
 @NgModule({
   declarations: [
     SkillsComponent,
     ProfileInfoComponent,
     ContactMeComponent,
     MenubarComponent,
+    PerfilComponent,
+    ProjectsComponent,
   ],
   imports: [
     CommonModule,
@@ -40,7 +43,9 @@ import {SidebarModule} from 'primeng/sidebar';
     SkillsComponent,
     ProfileInfoComponent,
     ContactMeComponent,
-    MenubarComponent
+    MenubarComponent,
+    PerfilComponent,
+    ProjectsComponent
   ]
 })
 export class SharedModule { }

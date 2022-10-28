@@ -6,7 +6,6 @@ import { SharedModule } from '../shared/shared.module';
 
 
 
-
 @NgModule({
   declarations: [
     HomeComponent
@@ -14,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class PagesModule { }

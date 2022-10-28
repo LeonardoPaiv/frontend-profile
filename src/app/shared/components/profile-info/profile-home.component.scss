@@ -1,9 +1,40 @@
 :host::ng-deep{
 
-    .profilesTitles{
-        background: var(--color-tertiary);
-        color: white;
-        padding: 0.5em;
-        border-radius: 1em;
+    .col-4{
+        text-align: justify;
+    }
+
+    .color{
+
+        &0{
+            background-color: var(--color-secondary);
+            border-radius: 0.3em;
+        }
+
+        &1{
+            background-color: var(--color-tertiary);
+            border-radius: 0.3em;
+        }
+
+        &2{
+            background-color: var(--color-secondary);
+            border-radius: 0.3em;
+        }
+        
+        &3{
+            background-color: var(--color-tertiary);
+            border-radius: 0.3em;
+        }
+        
+        &4{
+            background-color: var(--color-secondary);
+            border-radius: 0.3em;
+        }
+        
+        &5{
+            background-color: var(--color-tertiary);
+            border-radius: 0.3em;    
+        }
+
     }
 }

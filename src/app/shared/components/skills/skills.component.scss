@@ -1,20 +1,35 @@
 :host::ng-deep {
 
     .containerSkill{
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-
         img{
             width: auto;
             height: auto;
             width: 10em;
         }
 
-        p{
+        h3{
             font-size: 40px;
             margin: 0 auto;
         }
     }
 
+    .text-end{
+        flex-flow: row-reverse;
+    }
+
+    .col-sm-2{
+        padding-top: 1em;
+        border-radius: 0.3em;
+    }
+
+    img{
+        width: auto;
+        height: auto;
+        width: 10em;
+    }
+
+    p{
+        font-size: 30px;
+        color: #FFF;
+    }
 }
