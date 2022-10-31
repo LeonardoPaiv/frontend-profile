@@ -1,4 +1,38 @@
 :host::ng-deep{
+
+    .socialIcons{
+        min-height: 16em;
+    }
+    
+    .social{
+        img{
+            margin: 0 5em;
+            width: auto;
+            height: auto;
+            max-width: 10em;
+    
+            transition-property: max-width;
+            transition-duration: 0.5s;
+        }
+    
+        img:hover{
+            max-width: 15em;
+        }
+    }
+
+    .p-dialog{
+        min-width: 35vw;
+    }
+    .p-dialog-header{
+        background: #188BBE;
+    }
+    .p-dialog-title{
+        color: #FFF;
+    }
+    .p-dialog-content{
+        background: #188BBE;
+    }
+
     .window{
         margin: 0;
         height: 100vh;

@@ -1,12 +1,19 @@
 :host::ng-deep{
 
     .normal{
-        background: var(--color-secondary);
+        border-radius: 50px;
     }
     .reverse{
         display: flex;
         flex-flow: row-reverse;
-        background: var(--color-primary);
+    }
+
+    .content{
+        padding: 3em;
+        border-radius: 18px;
+        background: #188BBE;
+        box-shadow:  20px 20px 60px #1476a2,
+                     -20px -20px 60px #1ca0db;
     }
 
     .projectBox{
@@ -14,6 +21,10 @@
 
         div p{
             text-align: justify;
+        }
+
+        div h3 {
+            color: var(--text-color-lightgrey);
         }
 
     }

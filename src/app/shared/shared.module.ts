@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Components
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
-import { MenubarComponent } from './components/menubar/menubar.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 
@@ -17,14 +16,17 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { ReactiveFormsModule } from '@angular/forms';
-import {SidebarModule} from 'primeng/sidebar';
+import {DialogModule} from 'primeng/dialog';
+
+
+import lottie from 'lottie-web';
+import { defineLordIconElement } from 'lord-icon-element';
 
 @NgModule({
   declarations: [
     SkillsComponent,
     ProfileInfoComponent,
     ContactMeComponent,
-    MenubarComponent,
     PerfilComponent,
     ProjectsComponent,
   ],
@@ -37,15 +39,19 @@ import {SidebarModule} from 'primeng/sidebar';
     InputTextModule,
     InputTextareaModule,
     ReactiveFormsModule,
-    SidebarModule,
+    DialogModule
   ],
   exports: [
     SkillsComponent,
     ProfileInfoComponent,
     ContactMeComponent,
-    MenubarComponent,
     PerfilComponent,
     ProjectsComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SharedModule { }
+export class SharedModule { 
+  constructor() {
+    defineLordIconElement(lottie.loadAnimation)
+  }
+}

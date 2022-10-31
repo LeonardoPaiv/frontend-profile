@@ -16,6 +16,10 @@ export class ContactMeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public openDialog() {
+    this.display = true;
+  }
+
 
   public formEmail: FormGroup = this.formBuilder.group({
     name: ['', [Validators.minLength(1)]],
@@ -24,5 +28,6 @@ export class ContactMeComponent implements OnInit {
     message: ['', [Validators.minLength(1)]],
   })
 
+  public display: boolean = false
 
 }

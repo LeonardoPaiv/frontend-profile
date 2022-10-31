@@ -1,59 +1,83 @@
-<div class="container-fluid h-100">
-    <div class="row h-100 align-items-center">
-
-        <div class="col">
-            <div class="row">
-                <h2 class="title">Contact-me:</h2>
-            </div>
-            <form [formGroup]="formEmail">
-                <div class="row mt-4">
-                    <div class="col">
-                        <span>
-                            <label class="labelTitle" for="name">Name*</label>
-                            <small class="wrong-fild"
-                                *ngIf="formEmail.controls['name'].invalid && (formEmail.controls['name'].dirty || formEmail.controls['name'].touched)">Name is
-                                Required</small>
-                            <input required id="name" type="text" pInputText formControlName="name">
-                        </span>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col">
-                        <span>
-                            <label class="labelTitle" for="email">Email*</label>
-                            <small class="wrong-fild"
-                                *ngIf="formEmail.controls['email'].invalid && formEmail.controls['email'].dirty ">Invalid
-                                Email</small>
-                            <input required id="email" type="email" pInputText formControlName="email">
-                        </span>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col">
-                        <span>
-                            <label class="labelTitle" for="subject">Subject*</label>
-                            <small class="wrong-fild"
-                            *ngIf="formEmail.controls['subject'].invalid && (formEmail.controls['subject'].dirty || formEmail.controls['subject'].touched)">Subject is
-                            Required</small>
-                            <input required id="subject" type="text" pInputText formControlName="subject">
-                        </span>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col">
-                        <span>
-                            <label class="labelTitle" for="message">Message*</label>
-                            <small class="wrong-fild"
-                            *ngIf="formEmail.controls['message'].invalid && (formEmail.controls['message'].dirty || formEmail.controls['message'].touched)">Message is
-                            Required</small>
-                            <textarea required id="message" rows="5" cols="30" pInputTextarea
-                                formControlName="message"></textarea>
-                        </span>
-                    </div>
-                </div>
-
-                <button [disabled]="formEmail.invalid" pButton class="p-button-rounded" icon="pi pi-send" label="Send"></button>
-            </form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <span class="social">
+                <a href="https://www.linkedin.com/in/leonadodepaiva/?locale=en_US" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" />
+                </a>
+                <a href="https://github.com/LeonardoPaiv" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
+                </a>
+                <a (click)="openDialog()">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/iepbfivp.json"
+                    trigger="hover"
+                    style="width:250px;height:250px; cursor: pointer;">
+                    </lord-icon>
+                </a>
+            </span>
         </div>
     </div>
 </div>
+
+<p-dialog header="Contact-me" [(visible)]="display">
+    <div class="container-fluid h-100">
+        <div class="row h-100 align-items-center">
+    
+            <div class="col">
+                <!-- <div class="row">
+                    <h2 class="title">Contact-me:</h2>
+                </div> -->
+                <form [formGroup]="formEmail">
+                    <div class="row mt-4">
+                        <div class="col">
+                            <span>
+                                <label class="labelTitle" for="name">Name*</label>
+                                <small class="wrong-fild"
+                                    *ngIf="formEmail.controls['name'].invalid && (formEmail.controls['name'].dirty || formEmail.controls['name'].touched)">Name is
+                                    Required</small>
+                                <input required id="name" type="text" pInputText formControlName="name">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <span>
+                                <label class="labelTitle" for="email">Email*</label>
+                                <small class="wrong-fild"
+                                    *ngIf="formEmail.controls['email'].invalid && formEmail.controls['email'].dirty ">Invalid
+                                    Email</small>
+                                <input required id="email" type="email" pInputText formControlName="email">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <span>
+                                <label class="labelTitle" for="subject">Subject*</label>
+                                <small class="wrong-fild"
+                                *ngIf="formEmail.controls['subject'].invalid && (formEmail.controls['subject'].dirty || formEmail.controls['subject'].touched)">Subject is
+                                Required</small>
+                                <input required id="subject" type="text" pInputText formControlName="subject">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <span>
+                                <label class="labelTitle" for="message">Message*</label>
+                                <small class="wrong-fild"
+                                *ngIf="formEmail.controls['message'].invalid && (formEmail.controls['message'].dirty || formEmail.controls['message'].touched)">Message is
+                                Required</small>
+                                <textarea required id="message" rows="5" cols="30" pInputTextarea
+                                    formControlName="message"></textarea>
+                            </span>
+                        </div>
+                    </div>
+    
+                    <button [disabled]="formEmail.invalid" pButton class="p-button-rounded" icon="pi pi-send" label="Send"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</p-dialog>

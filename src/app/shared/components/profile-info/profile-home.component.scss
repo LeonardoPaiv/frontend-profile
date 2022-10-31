@@ -4,37 +4,15 @@
         text-align: justify;
     }
 
-    .color{
+    .content{
+        height: 90%;
 
-        &0{
-            background-color: var(--color-secondary);
-            border-radius: 0.3em;
-        }
+        padding: 1em;
+        margin-bottom: 2em;
 
-        &1{
-            background-color: var(--color-tertiary);
-            border-radius: 0.3em;
-        }
-
-        &2{
-            background-color: var(--color-secondary);
-            border-radius: 0.3em;
-        }
-        
-        &3{
-            background-color: var(--color-tertiary);
-            border-radius: 0.3em;
-        }
-        
-        &4{
-            background-color: var(--color-secondary);
-            border-radius: 0.3em;
-        }
-        
-        &5{
-            background-color: var(--color-tertiary);
-            border-radius: 0.3em;    
-        }
-
+        border-radius: 18px;
+        background: #188BBE;
+        box-shadow:  20px 20px 60px #1476a2,
+                     -20px -20px 60px #1ca0db;
     }
 }

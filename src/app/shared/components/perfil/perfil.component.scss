@@ -1,21 +1,5 @@
 :host::ng-deep{
 
-    .myPhoto{
-        width: auto;
-        height: auto;
-        max-width: 25em;
-    }
-
-    .name{
-        font-size: 100px;
-        color: var(--text-color-lightgrey);
-    }
-
-    .role{
-        color: #FF6D19;
-        font-size: 70px;
-    }
-
     .continue{
         animation: is-bouncing 1s ease-in-out alternate infinite;
         width: auto;
