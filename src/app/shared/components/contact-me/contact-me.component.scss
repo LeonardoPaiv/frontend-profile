@@ -3,18 +3,18 @@
     .socialIcons{
         min-height: 16em;
     }
-    
+
     .social{
         img{
             margin: 0 5em;
             width: auto;
             height: auto;
             max-width: 10em;
-    
+
             transition-property: max-width;
             transition-duration: 0.5s;
         }
-    
+
         img:hover{
             max-width: 15em;
         }
@@ -44,7 +44,7 @@
         width: 100%;
         border-radius: 1em;
         background: var(--color-tertiary);
-        color: var(--text-color-lightgrey);
+        // color: var(--text-color-lightgrey);
         border: none;
     }
 

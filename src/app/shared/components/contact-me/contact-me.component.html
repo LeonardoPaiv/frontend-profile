@@ -23,7 +23,7 @@
 <p-dialog header="Contact-me" [(visible)]="display">
     <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">
-    
+
             <div class="col">
                 <!-- <div class="row">
                     <h2 class="title">Contact-me:</h2>
@@ -65,17 +65,17 @@
                     <div class="row mt-4">
                         <div class="col">
                             <span>
-                                <label class="labelTitle" for="message">Message*</label>
+                                <label class="labelTitle" for="text">text*</label>
                                 <small class="wrong-fild"
-                                *ngIf="formEmail.controls['message'].invalid && (formEmail.controls['message'].dirty || formEmail.controls['message'].touched)">Message is
+                                *ngIf="formEmail.controls['text'].invalid && (formEmail.controls['text'].dirty || formEmail.controls['text'].touched)">Message is
                                 Required</small>
-                                <textarea required id="message" rows="5" cols="30" pInputTextarea
-                                    formControlName="message"></textarea>
+                                <textarea required id="text" rows="5" cols="30" pInputTextarea
+                                    formControlName="text"></textarea>
                             </span>
                         </div>
                     </div>
-    
-                    <button [disabled]="formEmail.invalid" pButton class="p-button-rounded" icon="pi pi-send" label="Send"></button>
+
+                    <button [disabled]="formEmail.invalid" (click)="sendEmail(formEmail.value)" pButton class="p-button-rounded" icon="pi pi-send" label="Send"></button>
                 </form>
             </div>
         </div>

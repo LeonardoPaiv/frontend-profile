@@ -8,9 +8,12 @@ import { SkillsService } from 'src/app/services/skills.service';
 })
 export class SkillsComponent implements OnInit {
 
+  public skills!: {skill: string, image: string}[];
+
+
   public getSkills() {
     this.skillsService.getSkills().subscribe({
-      next: res => console.log(res),
+      next: res => this.skills = res,
       error: e => console.error(e)
     })
   }
@@ -33,17 +36,5 @@ export class SkillsComponent implements OnInit {
     {softSkill: 'Organization', image: 'https://cdn-icons-png.flaticon.com/512/7551/7551440.png'},
     {softSkill: 'Quick learning', image: 'https://cdn-icons-png.flaticon.com/512/7910/7910040.png'},
     {softSkill: 'Calm', image: 'https://cdn-icons-png.flaticon.com/512/2593/2593830.png'}
-  ]
-
-  public skills: {skill: string, image: string}[] = [
-    {skill: 'Typescript', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'},
-    {skill: 'Angular', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg'},
-    {skill: 'Python', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'},
-    {skill: 'NodeJS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'},
-    {skill: 'Express', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'},
-    {skill: 'NestJs', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg'},
-    {skill: 'Docker', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'},
-    {skill: 'Rancher', image: 'https://www.vectorlogo.zone/logos/rancher/rancher-icon.svg'},
-    {skill: 'Openshift', image: 'https://www.vectorlogo.zone/logos/openshift/openshift-icon.svg'}
   ]
 }

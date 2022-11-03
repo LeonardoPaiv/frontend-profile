@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import  {  FormBuilder, FormGroup, Validators, }  from  '@angular/forms';
-import { EmailForm } from 'src/app/models/email-form';
+import { MailService } from 'src/app/services/mail.service';
+import { EmailForm } from '../../../models/email-form'
 
 @Component({
   selector: 'app-contact-me',
@@ -9,8 +10,18 @@ import { EmailForm } from 'src/app/models/email-form';
 })
 export class ContactMeComponent implements OnInit {
 
+  public display: boolean = false;
+
+  public formEmail: FormGroup = this.formBuilder.group({
+    name: ['', [Validators.minLength(1)]],
+    email: ['', [Validators.required, Validators.email]],
+    subject: ['', [Validators.minLength(1)]],
+    text: ['', [Validators.minLength(1)]],
+  });
+
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private mailService: MailService
   ) { }
 
   ngOnInit(): void {
@@ -20,14 +31,12 @@ export class ContactMeComponent implements OnInit {
     this.display = true;
   }
 
+  public sendEmail(mail: EmailForm) {
+    this.mailService.postEmail(mail).subscribe({
+      next: res => res,
+      error: e => console.log(e)
+    })
+  }
 
-  public formEmail: FormGroup = this.formBuilder.group({
-    name: ['', [Validators.minLength(1)]],
-    email: ['', [Validators.required, Validators.email]],
-    subject: ['', [Validators.minLength(1)]],
-    message: ['', [Validators.minLength(1)]],
-  })
-
-  public display: boolean = false
 
 }

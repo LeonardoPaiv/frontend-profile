@@ -2,5 +2,5 @@ export interface EmailForm {
     name: string;
     email: string;
     subject: string;
-    message: string;
+    text: string;
 }
