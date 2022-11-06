@@ -20,7 +20,7 @@
     </div>
 </div>
 
-<p-dialog header="Contact-me" [(visible)]="display">
+<p-dialog [modal]="true" transitionOptions="200ms" header="Contact-me" [(visible)]="display">
     <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">
 
@@ -74,7 +74,6 @@
                             </span>
                         </div>
                     </div>
-
                     <button [disabled]="formEmail.invalid" (click)="sendEmail(formEmail.value)" pButton class="p-button-rounded" icon="pi pi-send" label="Send"></button>
                 </form>
             </div>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import  {  FormBuilder, FormGroup, Validators, }  from  '@angular/forms';
 import { MailService } from 'src/app/services/mail.service';
-import { EmailForm } from '../../../models/email-form'
+import { EmailForm } from '../../../models/email-form';
+
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-contact-me',
@@ -21,7 +24,8 @@ export class ContactMeComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private mailService: MailService
+    private mailService: MailService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -33,10 +37,18 @@ export class ContactMeComponent implements OnInit {
 
   public sendEmail(mail: EmailForm) {
     this.mailService.postEmail(mail).subscribe({
-      next: res => res,
-      error: e => console.log(e)
-    })
+      next: res => this.emailSuccess(),
+      error: e => this.emailFail()
+    });
+    this.display = false
   }
 
+  public emailFail() {
+    this.toastr.error('problem with service', 'connection error')
+  }
+
+  public emailSuccess() {
+    this.toastr.success('Email sended', 'Success')
+  }
 
 }

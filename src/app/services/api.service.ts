@@ -1,5 +1,5 @@
 export const apiService = {
   skills: 'skills',
-  softSkills: 'softskills',
+  softSkills: 'softSkills',
   mail: 'mail',
 }

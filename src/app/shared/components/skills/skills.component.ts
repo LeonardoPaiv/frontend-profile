@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillsService } from 'src/app/services/skills.service';
+import { SoftSkillsService } from 'src/app/services/soft-skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,6 +10,7 @@ import { SkillsService } from 'src/app/services/skills.service';
 export class SkillsComponent implements OnInit {
 
   public skills!: {skill: string, image: string}[];
+  public softSkills!: {softSkill: string, image: string}[];
 
 
   public getSkills() {
@@ -18,23 +20,20 @@ export class SkillsComponent implements OnInit {
     })
   }
 
+  public getSoftSkills() {
+    this.softSKillsService.getSoftSkills().subscribe({
+      next: res => this.softSkills = res,
+      error: e => console.log(e)
+    })
+  }
+
   constructor(
-    private skillsService: SkillsService
+    private skillsService: SkillsService,
+    private softSKillsService: SoftSkillsService
   ) { }
 
   ngOnInit(): void {
     this.getSkills()
+    this.getSoftSkills()
   }
-
-  public softSkills: {softSkill: string, image: string}[] = [
-    {softSkill: 'Ethic', image: 'https://cdn-icons-png.flaticon.com/512/6105/6105970.png'},
-    {softSkill: 'Empathy', image: 'https://cdn-icons-png.flaticon.com/512/2967/2967514.png'},
-    {softSkill: 'Proactivity', image: 'https://cdn-icons-png.flaticon.com/512/1066/1066385.png'},
-    {softSkill: 'Creativity', image: 'https://cdn-icons-png.flaticon.com/512/3135/3135733.png'},
-    {softSkill: 'Teamwork', image: 'https://cdn-icons-png.flaticon.com/512/1256/1256650.png'},
-    {softSkill: 'Leadership', image: 'https://cdn-icons-png.flaticon.com/512/4818/4818373.png'},
-    {softSkill: 'Organization', image: 'https://cdn-icons-png.flaticon.com/512/7551/7551440.png'},
-    {softSkill: 'Quick learning', image: 'https://cdn-icons-png.flaticon.com/512/7910/7910040.png'},
-    {softSkill: 'Calm', image: 'https://cdn-icons-png.flaticon.com/512/2593/2593830.png'}
-  ]
 }

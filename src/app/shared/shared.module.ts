@@ -50,7 +50,7 @@ import { defineLordIconElement } from 'lord-icon-element';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SharedModule { 
+export class SharedModule {
   constructor() {
     defineLordIconElement(lottie.loadAnimation)
   }
