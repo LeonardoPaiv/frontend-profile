@@ -10,12 +10,14 @@ import { defineLordIconElement } from 'lord-icon-element';
 
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
