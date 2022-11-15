@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SkillsService } from 'src/app/services/skills.service';
-import { SoftSkillsService } from 'src/app/services/soft-skills.service';
+import { ActivatedRoute } from '@angular/router';
+import { Skills } from 'src/app/models/skills';
+import { SoftSkills } from 'src/app/models/soft-skills';
 
 @Component({
   selector: 'app-skills',
@@ -9,31 +10,15 @@ import { SoftSkillsService } from 'src/app/services/soft-skills.service';
 })
 export class SkillsComponent implements OnInit {
 
-  public skills!: {skill: string, image: string}[];
-  public softSkills!: {softSkill: string, image: string}[];
-
-
-  public getSkills() {
-    this.skillsService.getSkills().subscribe({
-      next: res => this.skills = res,
-      error: e => console.error(e)
-    })
-  }
-
-  public getSoftSkills() {
-    this.softSKillsService.getSoftSkills().subscribe({
-      next: res => this.softSkills = res,
-      error: e => console.log(e)
-    })
-  }
+  public skills!: Skills[];
+  public softSkills!: SoftSkills[];
 
   constructor(
-    private skillsService: SkillsService,
-    private softSKillsService: SoftSkillsService
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.getSkills()
-    this.getSoftSkills()
+    this.softSkills = this.route.snapshot.data['softSkills']
+    this.skills = this.route.snapshot.data['skills']
   }
 }

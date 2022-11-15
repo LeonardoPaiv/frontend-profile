@@ -5,7 +5,7 @@
     }
 
     .content{
-        height: 90%;
+        height: 100%;
 
         padding: 1em;
         margin-bottom: 2em;
@@ -14,5 +14,15 @@
         background: #188BBE;
         box-shadow:  20px 20px 60px #1476a2,
                      -20px -20px 60px #1ca0db;
+    }
+
+    .courses{
+      font-size: 1em;
+    }
+
+    .workingOn{
+      width: auto;
+      height: auto;
+      max-height: 10em;
     }
 }

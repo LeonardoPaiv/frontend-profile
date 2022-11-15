@@ -1,35 +1,58 @@
 <div class="container-fluid mt-5 mb-5">
   <div class="row">
-    <div class="col-4" *ngFor="let info of infos">
-      <article class="content">
-        <h3 class="profilesTitles">{{info.title}}</h3>
-        <p>{{info.description}}</p>
-      </article>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid mt-5 mb-5">
-  <div class="row">
     <div class="col-8">
       <div class="row">
-        <div class="col-4">
+        <div class="col-6">
           <article class="content">
             <h3 class="profilesTitles">Profile</h3>
             <p>{{profileDescription.description}}</p>
           </article>
         </div>
+        <div class="col-6">
+          <article class="content">
+            <h3 class="profilesTitles">Education</h3>
+            <span *ngFor="let edu of education">
+              <h4><b>{{edu.company}}</b>, {{edu.company}} - {{edu.degree}}</h4>
+              <small>{{edu.period}}</small>
+              <p>{{edu.description}}</p>
+            </span>
+          </article>
+        </div>
       </div>
-      <div class="col-4 w-100">
-        <article class="content">
-          <h3 class="profilesTitles">Education</h3>
-          <p>{{education.description}}</p>
-        </article>
+      <div class="row mt-5  ">
+        <div class="col-6">
+          <article class="content">
+            <h3 class="profilesTitles">Certificates</h3>
+            <span *ngFor="let certificate of certificates">
+              <h4><b>{{certificate.title}}</b> - {{certificate.time}}H</h4>
+              <article class="text-center mt-5">
+                <img *ngIf="certificates.length < 4" class="workingOn" src="https://cdn-icons-png.flaticon.com/512/3264/3264753.png" alt="working on">
+                <p>working on</p>
+              </article>
+            </span>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="content">
+            <h3 class="profilesTitles">Short Courses</h3>
+            <span *ngFor="let shortCourse of shortCourses" [ngSwitch]="shortCourse.time">
+              <h4 class="courses" *ngSwitchDefault><b>{{shortCourse.title}}</b> - {{shortCourse.time}}H</h4>
+              <h4 class="courses" *ngSwitchCase="0"><b>{{shortCourse.title}}</b></h4>
+            </span>
+          </article>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-4">
-
+    <div class="col-4">
+      <article class="content">
+        <h3 class="profilesTitles">Employment History</h3>
+        <span *ngFor="let employment of employmentHistory">
+          <h4><b>{{employment.company}}</b>, {{employment.company}} - {{employment.metier}}</h4>
+          <small>{{employment.period}}</small>
+          <p>{{employment.description}}</p>
+        </span>
+      </article>
+    </div>
   </div>
 
 </div>
