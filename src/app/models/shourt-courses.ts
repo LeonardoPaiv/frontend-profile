@@ -1,4 +1,4 @@
-export interface ShourtCourses {
+export interface ShortCourses {
   title: String,
   time: Number,
   description: String,
