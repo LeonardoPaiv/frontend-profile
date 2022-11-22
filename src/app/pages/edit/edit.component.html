@@ -3,8 +3,411 @@
     <div class="row text-center">
       <h1>Edit <i class="pi pi-pencil" style="font-size: 2rem"></i></h1>
     </div>
-    <div class="row">
 
+    <!-- PROFILE -->
+    <div class="row mt-5">
+      <div class="col">
+        <h2>Edit Profile</h2>
+        <p-table [value]="profileDescription">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Description</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-profile>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="profile.description">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{profile.description}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="row mt-5">
+      <div class="col">
+        <h2>Edit Education</h2>
+        <p-table [value]="education">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>company</th>
+              <th>local</th>
+              <th>degree</th>
+              <th>period</th>
+              <th style="width: 30%;">description</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-education>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="education.company">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{education.company}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="education.local">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{education.local}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="education.degree">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{education.degree}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="education.period">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{education.period}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="education.description">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{education.description}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!-- EMPLOYMENT History -->
+    <div class="row mt-5">
+      <div class="col">
+        <h2>Edit Employment History</h2>
+        <p-table [value]="employmentHistory">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>company</th>
+              <th>local</th>
+              <th>metier</th>
+              <th>period</th>
+              <th style="width: 30%;">description</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-employment>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="employment.company">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{employment.company}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="employment.local">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{employment.local}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="employment.metier">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{employment.metier}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="employment.period">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{employment.period}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="employment.description">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{employment.description}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!-- SHORT COURSES -->
+    <div class="row mt-5">
+      <div class="col">
+        <h2>Edit Short Courses</h2>
+        <p-table [value]="shortCourses">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Title</th>
+              <th>Time</th>
+              <th>Description</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-course>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="course.title">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{course.title}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="course.time">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{course.time}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="course.description">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{course.description}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!-- CERTIFICATES -->
+    <div class="row mt-5">
+      <div class="col">
+        <h2>Edit Certificates</h2>
+        <p-table [value]="certificates">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Title</th>
+              <th>Time</th>
+              <th>Description</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-course>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="course.title">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{course.title}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="course.time">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{course.time}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="course.description">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{course.description}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="row mt-5">
+      <div class="col">
+        <h2>Edit Skills</h2>
+        <p-table [value]="skills">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Skill</th>
+              <th>image link</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-skill>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="skill.skill">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{skill.skill}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="skill.image">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{skill.image}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!-- SoftSKILLS -->
+    <div class="row mt-5">
+      <div class="col">
+        <h2>Edit Soft Skills</h2>
+        <p-table [value]="softSkills">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Skill</th>
+              <th>image link</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-softSkill>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="softSkill.softSkill">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{softSkill.softSkill}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="softSkill.image">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{softSkill.image}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
     </div>
   </div>
 </div>

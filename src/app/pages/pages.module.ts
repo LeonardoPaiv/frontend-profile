@@ -4,13 +4,16 @@ import { HomeComponent } from './home/home.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './login/login.component';
+import { EditComponent } from './edit/edit.component';
 
 import lottie from 'lottie-web';
 import { defineLordIconElement } from 'lord-icon-element';
 
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
-import { EditComponent } from './edit/edit.component';
+import {TableModule} from 'primeng/table';
+import { FormsModule } from '@angular/forms';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { EditComponent } from './edit/edit.component';
     PagesRoutingModule,
     SharedModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    TableModule,
+    FormsModule,
+    InputTextareaModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

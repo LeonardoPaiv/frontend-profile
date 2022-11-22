@@ -11,7 +11,17 @@
   .content-container {
     border-radius: 50px;
     background: #F0F0F0;
-    box-shadow: 20px 20px 60px #cccccc,
-      -20px -20px 60px #ffffff;
+
+    padding: 2em;
+  }
+
+  .p-inputtextarea{
+    width: 100%;
+  }
+
+  .buttonset{
+    button{
+      margin-right: 0.5em;
+    }
   }
 }

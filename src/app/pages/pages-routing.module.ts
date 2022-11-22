@@ -23,15 +23,26 @@ const routes: Routes = [
       shortCourses: ShortCoursesResolverGuard,
       skills: SkillsResolverGuard,
       softSkills: SoftSkillsResolverGuard,
-    }
+    },
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    title: 'login'
   },
   {
     path: 'admin/edit',
-    component: EditComponent
+    component: EditComponent,
+    title: 'Administration',
+    resolve: {
+      profile: ProfileResolverGuard,
+      education: EducationResolverGuard,
+      employmentHistory: EmploymentHistoryResolverGuard,
+      certificates: CertificatesResolverGuard,
+      shortCourses: ShortCoursesResolverGuard,
+      skills: SkillsResolverGuard,
+      softSkills: SoftSkillsResolverGuard,
+    }
   }
 ];
 

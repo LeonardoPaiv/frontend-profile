@@ -25,8 +25,7 @@ export class ProfileInfoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-  ) {
-  }
+  ) { }
 
   ngOnInit(): void {
     this.profileDescription = this.route.snapshot.data['profile'][0]
@@ -34,8 +33,6 @@ export class ProfileInfoComponent implements OnInit {
     this.employmentHistory = this.route.snapshot.data['employmentHistory']
     this.certificates = this.route.snapshot.data['certificates']
     this.shortCourses = this.route.snapshot.data['shortCourses']
-    console.log(this.shortCourses);
-
   }
 
   public display: boolean = false;
