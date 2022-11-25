@@ -30,7 +30,7 @@ export class EditComponent implements OnInit {
   public softSkills!: SoftSkills[];
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -41,7 +41,6 @@ export class EditComponent implements OnInit {
     this.shortCourses = this.route.snapshot.data['shortCourses']
     this.softSkills = this.route.snapshot.data['softSkills']
     this.skills = this.route.snapshot.data['skills']
-
   }
 
 }

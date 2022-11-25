@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../guards/auth.guard';
 import { CertificatesResolverGuard } from '../guards/certificates-resolver.guard';
 import { EducationResolverGuard } from '../guards/education-resolver.guard';
 import { EmploymentHistoryResolverGuard } from '../guards/employment-history-resolver.guard';
@@ -34,6 +35,7 @@ const routes: Routes = [
     path: 'admin/edit',
     component: EditComponent,
     title: 'Administration',
+    canActivate: [AuthGuard],
     resolve: {
       profile: ProfileResolverGuard,
       education: EducationResolverGuard,

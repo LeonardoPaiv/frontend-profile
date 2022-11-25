@@ -27,17 +27,17 @@ export class ShortCoursesService {
 
   public postShortCourses(dto: ShortCourses): Observable<any> {
     const url = this.api + '/create';
-    return this.http.post(url, JSON.stringify(dto), {headers: this.header});
+    return this.http.post(url, JSON.stringify(dto), {headers: this.header, withCredentials: true});
   }
 
   public putShortCourses(dto: ShortCourses): Observable<any> {
     const url = this.api + '/update';
     console.log(url)
-    return this.http.put(url, JSON.stringify(dto), {headers: this.header});
+    return this.http.put(url, JSON.stringify(dto), {headers: this.header, withCredentials: true});
   }
 
   public deleteShortCourses(id: string):Observable<any>{
     const url = this.api + `/delete/${id}`;
-  return this.http.delete(url, {headers: this.header})
+  return this.http.delete(url, {headers: this.header, withCredentials: true})
   }
 }

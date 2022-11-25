@@ -27,17 +27,17 @@ export class CertificateService {
 
   public postCertificates(dto: Certificates): Observable<any> {
     const url = this.api + '/create';
-    return this.http.post(url, JSON.stringify(dto), {headers: this.header});
+    return this.http.post(url, JSON.stringify(dto), {headers: this.header, withCredentials: true});
   }
 
   public putCertificates(dto: Certificates): Observable<any> {
     const url = this.api + '/update';
     console.log(url)
-    return this.http.put(url, JSON.stringify(dto), {headers: this.header});
+    return this.http.put(url, JSON.stringify(dto), {headers: this.header, withCredentials: true});
   }
 
   public deleteCertificates(id: string):Observable<any>{
     const url = this.api + `/delete/${id}`;
-  return this.http.delete(url, {headers: this.header})
+  return this.http.delete(url, {headers: this.header, withCredentials: true})
   }
 }
