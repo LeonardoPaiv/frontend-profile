@@ -15,6 +15,7 @@ import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {DialogModule} from 'primeng/dialog';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     TableModule,
     FormsModule,
     InputTextareaModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DialogModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

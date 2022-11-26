@@ -1,4 +1,73 @@
+
+<p-dialog header="Create {{tipoDialog}}" [modal]="true" [(visible)]="display" [ngSwitch]="tipoDialog">
+  <div class="row">
+    <form *ngSwitchCase="'Certificates'" [formGroup]="formCertificate">
+      <label>Title</label>
+      <input type="text" pInputText formControlName="title">
+      <label>Time</label>
+      <input type="number" pInputText formControlName="time">
+      <label>Description</label>
+      <input type="text" pInputText formControlName="description">
+      <button pButton label="create" (click)="createCertificate(formCertificate.value)"></button>
+    </form>
+    <form *ngSwitchCase="'Short Courses'" [formGroup]="formShortCourse">
+      <label>Title</label>
+      <input type="text" pInputText formControlName="title">
+      <label>Time</label>
+      <input type="number" pInputText formControlName="time">
+      <label>Description</label>
+      <input type="text" pInputText formControlName="description">
+      <button pButton label="create" (click)="createShortCourse(formShortCourse.value)"></button>
+    </form>
+    <form *ngSwitchCase="'Employment History'" [formGroup]="formEmploy">
+      <label>Company</label>
+      <input type="text" pInputText formControlName="company">
+      <label>Local</label>
+      <input type="text" pInputText formControlName="local">
+      <label>Metier</label>
+      <input type="text" pInputText formControlName="metier">
+      <label>Period</label>
+      <input type="text" pInputText formControlName="period">
+      <label>Description</label>
+      <input type="text" pInputText formControlName="description">
+      <button pButton label="create" (click)="createEmploymentHistory(formEmploy.value)"></button>
+    </form>
+    <form *ngSwitchCase="'Education'" [formGroup]="formEducation">
+      <label>Company</label>
+      <input type="text" pInputText formControlName="company">
+      <label>Local</label>
+      <input type="text" pInputText formControlName="local">
+      <label>Degree</label>
+      <input type="text" pInputText formControlName="degree">
+      <label>Period</label>
+      <input type="text" pInputText formControlName="period">
+      <label>Description</label>
+      <input type="text" pInputText formControlName="description">
+      <button pButton label="create" (click)="createEducation(formEducation.value)"></button>
+    </form>
+    <form *ngSwitchCase="'Skill'" [formGroup]="formSkills">
+      <label>Skill</label>
+      <input type="text" pInputText formControlName="skill">
+      <label>image</label>
+      <input type="text" pInputText formControlName="image">
+      <button pButton label="create" (click)="createSkills(formSkills.value)"></button>
+    </form>
+    <form *ngSwitchCase="'Soft Skill'" [formGroup]="formSoftSkills">
+      <label>Soft Skill</label>
+      <input type="text" pInputText formControlName="softSkill">
+      <label>image</label>
+      <input type="text" pInputText formControlName="image">
+      <button pButton label="create" (click)="createSoftSkill(formSoftSkills.value)"></button>
+    </form>
+  </div>
+</p-dialog>
+
 <div class="container-fluid min-vh-100 background">
+  <div class="row text-end">
+    <div class="col mr-5 mt-2">
+      <button pButton label="logout" icon="pi pi-sign-out" (click)="logout()"></button>
+    </div>
+  </div>
   <div class="container content-container mt-5">
     <div class="row text-center">
       <h1>Edit <i class="pi pi-pencil" style="font-size: 2rem"></i></h1>
@@ -29,8 +98,7 @@
                 </p-cellEditor>
               </td>
               <td class="buttonset">
-                <button pButton icon="pi pi-save"></button>
-                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+                <button pButton icon="pi pi-save" (click)="alterarProfile(profile)"></button>
               </td>
             </tr>
           </ng-template>
@@ -41,7 +109,10 @@
     <!-- EDUCATION -->
     <div class="row mt-5">
       <div class="col">
-        <h2>Edit Education</h2>
+        <span class="title-plus">
+          <h2>Edit Education</h2>
+          <button pButton icon="pi pi-plus" (click)="display = true; tipoDialog = 'Education'"></button>
+        </span>
         <p-table [value]="education">
           <ng-template pTemplate="header">
             <tr>
@@ -111,8 +182,8 @@
                 </p-cellEditor>
               </td>
               <td class="buttonset">
-                <button pButton icon="pi pi-save"></button>
-                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+                <button pButton icon="pi pi-save" (click)="alterarEducation(education)"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteEducation(education._id)"></button>
               </td>
             </tr>
           </ng-template>
@@ -123,7 +194,10 @@
     <!-- EMPLOYMENT History -->
     <div class="row mt-5">
       <div class="col">
-        <h2>Edit Employment History</h2>
+        <span class="title-plus">
+          <h2>Edit Employment History</h2>
+          <button pButton icon="pi pi-plus" (click)="display = true; tipoDialog = 'Employment History'"></button>
+        </span>
         <p-table [value]="employmentHistory">
           <ng-template pTemplate="header">
             <tr>
@@ -193,8 +267,8 @@
                 </p-cellEditor>
               </td>
               <td class="buttonset">
-                <button pButton icon="pi pi-save"></button>
-                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+                <button pButton icon="pi pi-save" (click)="alterarEmploymentHistory(employment)"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteEmploymentHistory(employment._id)"></button>
               </td>
             </tr>
           </ng-template>
@@ -205,7 +279,10 @@
     <!-- SHORT COURSES -->
     <div class="row mt-5">
       <div class="col">
-        <h2>Edit Short Courses</h2>
+        <span class="title-plus">
+          <h2>Edit Short Courses</h2>
+          <button pButton icon="pi pi-plus" (click)="display = true; tipoDialog = 'Short Courses'"></button>
+        </span>
         <p-table [value]="shortCourses">
           <ng-template pTemplate="header">
             <tr>
@@ -251,8 +328,8 @@
                 </p-cellEditor>
               </td>
               <td class="buttonset">
-                <button pButton icon="pi pi-save"></button>
-                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+                <button pButton icon="pi pi-save" (click)="alterarShortCourse(course)"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteShortCourse(course._id)"></button>
               </td>
             </tr>
           </ng-template>
@@ -263,7 +340,10 @@
     <!-- CERTIFICATES -->
     <div class="row mt-5">
       <div class="col">
-        <h2>Edit Certificates</h2>
+        <span class="title-plus">
+          <h2>Edit Certificates</h2>
+          <button pButton icon="pi pi-plus" (click)="display = true; tipoDialog = 'Certificates'"></button>
+        </span>
         <p-table [value]="certificates">
           <ng-template pTemplate="header">
             <tr>
@@ -289,7 +369,7 @@
               <td pEditableColumn>
                 <p-cellEditor>
                   <ng-template pTemplate="input">
-                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="course.time">
+                    <textarea pInputTextarea [autoResize]="true" type="number" [(ngModel)]="course.time">
                     </textarea>
                   </ng-template>
                   <ng-template pTemplate="output">
@@ -309,8 +389,8 @@
                 </p-cellEditor>
               </td>
               <td class="buttonset">
-                <button pButton icon="pi pi-save"></button>
-                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+                <button pButton icon="pi pi-save" (click)="alterarCertificate(course)"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteCertificate(course._id)"></button>
               </td>
             </tr>
           </ng-template>
@@ -321,7 +401,10 @@
     <!-- SKILLS -->
     <div class="row mt-5">
       <div class="col">
-        <h2>Edit Skills</h2>
+        <span class="title-plus">
+          <h2>Edit Skills</h2>
+          <button pButton icon="pi pi-plus" (click)="display = true; tipoDialog = 'Skill'"></button>
+        </span>
         <p-table [value]="skills">
           <ng-template pTemplate="header">
             <tr>
@@ -355,8 +438,8 @@
                 </p-cellEditor>
               </td>
               <td class="buttonset">
-                <button pButton icon="pi pi-save"></button>
-                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+                <button pButton icon="pi pi-save" (click)="alterarSkill(skill)"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteSkill(skill._id)"></button>
               </td>
             </tr>
           </ng-template>
@@ -367,11 +450,14 @@
     <!-- SoftSKILLS -->
     <div class="row mt-5">
       <div class="col">
-        <h2>Edit Soft Skills</h2>
+        <span class="title-plus">
+          <h2>Edit Soft Skill</h2>
+          <button pButton icon="pi pi-plus" (click)="display = true; tipoDialog = 'Soft Skill'"></button>
+        </span>
         <p-table [value]="softSkills">
           <ng-template pTemplate="header">
             <tr>
-              <th>Skill</th>
+              <th>Soft Skill</th>
               <th>image link</th>
               <th style="width: 10%;">action</th>
             </tr>
@@ -401,8 +487,8 @@
                 </p-cellEditor>
               </td>
               <td class="buttonset">
-                <button pButton icon="pi pi-save"></button>
-                <button pButton icon="pi pi-times" class="p-button-danger"></button>
+                <button pButton icon="pi pi-save" (click)="alterarSoftSkill(softSkill)"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteSoftSkill(softSkill._id)"></button>
               </td>
             </tr>
           </ng-template>

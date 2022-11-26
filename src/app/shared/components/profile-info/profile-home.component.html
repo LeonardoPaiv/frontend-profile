@@ -25,11 +25,11 @@
             <h3 class="profilesTitles">Certificates</h3>
             <span *ngFor="let certificate of certificates">
               <h4><b>{{certificate.title}}</b> - {{certificate.time}}H</h4>
-              <article class="text-center mt-5">
-                <img *ngIf="certificates.length < 4" class="workingOn" src="https://cdn-icons-png.flaticon.com/512/3264/3264753.png" alt="working on">
-                <p>working on</p>
-              </article>
             </span>
+            <article class="text-center mt-5">
+              <img *ngIf="certificates.length < 4" class="workingOn" src="https://cdn-icons-png.flaticon.com/512/3264/3264753.png" alt="working on">
+              <p>working on</p>
+            </article>
           </article>
         </div>
         <div class="col-6">

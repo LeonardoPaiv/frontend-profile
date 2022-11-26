@@ -24,4 +24,22 @@
       margin-right: 0.5em;
     }
   }
+
+  .title-plus{
+    display: flex;
+    margin-bottom: 1em;
+
+    button{
+      margin-left: 1em;
+    }
+  }
+
+  .p-dialog{
+    min-width: 30vw;
+
+    .p-inputtext{
+      margin: 10px 0;
+      width: 100%;
+    }
+  }
 }

@@ -12,7 +12,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  print() {
-    console.log('teste')
-  }
 }
