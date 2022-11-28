@@ -25,6 +25,12 @@ export class AuthService {
     return this.http.post(url, JSON.stringify(login), {headers: this.header, withCredentials: true})
   }
 
+  public logout(): Observable<any> {
+    const url = this.api + '/logout';
+    console.log(url)
+    return this.http.delete(url, {withCredentials: true})
+  }
+
   public authenticated(): Observable<any> {
     const url = this.api + '/authenticated'
     return this.http.get(url, {withCredentials: true})

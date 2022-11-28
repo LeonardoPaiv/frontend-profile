@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Certificates } from 'src/app/models/certificates';
 import { Education } from 'src/app/models/education';
@@ -16,6 +16,7 @@ import { ShortCoursesService } from 'src/app/services/short-courses.service';
 import { SkillsService } from 'src/app/services/skills.service';
 import { SoftSkillsService } from 'src/app/services/soft-skills.service';
 import  {  FormBuilder, FormGroup, Validators, }  from  '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-edit',
@@ -87,6 +88,7 @@ export class EditComponent implements OnInit {
   });
 
   constructor(
+    private authSerivce: AuthService,
     private route: ActivatedRoute,
     private certificateService: CertificateService,
     private educationService: EducationService,
@@ -96,7 +98,8 @@ export class EditComponent implements OnInit {
     private skillservice: SkillsService,
     private softSkillsService: SoftSkillsService,
     private toastr: ToastrService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -111,7 +114,14 @@ export class EditComponent implements OnInit {
   }
 
   public logout() {
-
+    this.authSerivce.logout().subscribe({
+      next: res => {
+        this.router.navigate(['/'])
+        this.toastr.success(res.msg)
+      },
+      error: e => console.log(e)
+    }
+    )
   }
 
   public getCertificates() {
