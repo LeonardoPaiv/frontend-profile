@@ -2,7 +2,7 @@
     <div class="col">
         <h3 class="projectTitle">Projects</h3>
         <div *ngFor="let project of projects; index as i" class="projectBox {{i % 2 == 0 ? 'row text-start normal' : 'row text-end reverse'}}">
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <img class="projectImage" [src]="project.imagePath" alt="project.project">
             </div>
             <div class="col content">
