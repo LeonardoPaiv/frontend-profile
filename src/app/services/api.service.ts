@@ -5,6 +5,7 @@ export const apiService = {
   login: 'auth',
   mail: 'mail',
   profile: 'profile',
+  projects: 'projects',
   skills: 'skills',
   shortCourses: 'shortCourses',
   softSkills: 'softSkills',

@@ -17,6 +17,8 @@ import { SkillsService } from 'src/app/services/skills.service';
 import { SoftSkillsService } from 'src/app/services/soft-skills.service';
 import  {  FormBuilder, FormGroup, Validators, }  from  '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { Projects } from 'src/app/models/projects';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-edit',
@@ -42,6 +44,8 @@ export class EditComponent implements OnInit {
   public skills!: Skills[];
 
   public softSkills!: SoftSkills[];
+
+  public projects!: Projects[];
 
   public formCertificate: FormGroup = this.formBuilder.group({
     title: ['', [Validators.required]],
@@ -87,6 +91,13 @@ export class EditComponent implements OnInit {
     id: []
   });
 
+  public formProject: FormGroup = this.formBuilder.group({
+    project: ['', [Validators.required]],
+    description: ['', [Validators.required]],
+    imagePath: ['', [Validators.required]],
+    id: []
+  });
+
   constructor(
     private authSerivce: AuthService,
     private route: ActivatedRoute,
@@ -97,6 +108,7 @@ export class EditComponent implements OnInit {
     private shortCoursesService: ShortCoursesService,
     private skillservice: SkillsService,
     private softSkillsService: SoftSkillsService,
+    private projectService: ProjectsService,
     private toastr: ToastrService,
     private formBuilder: FormBuilder,
     private router: Router
@@ -110,7 +122,7 @@ export class EditComponent implements OnInit {
     this.shortCourses = this.route.snapshot.data['shortCourses']
     this.softSkills = this.route.snapshot.data['softSkills']
     this.skills = this.route.snapshot.data['skills']
-    console.log(this.certificates)
+    this.projects = this.route.snapshot.data['projects']
   }
 
   public logout() {
@@ -341,6 +353,41 @@ export class EditComponent implements OnInit {
       next: () => {
         this.toastr.success('Item changed');
         this.getSoftSkill()
+      }
+    })
+  }
+
+  public getProjects() {
+    this.projectService.getProjects().subscribe({
+      next: res => this.projects = res
+    })
+  }
+
+  public createProjects(dto: Projects) {
+    this.projectService.postProjects(dto).subscribe({
+      next: () => {
+        this.toastr.success('Item created', 'success');
+        this.getProjects()
+      }
+    })
+  }
+
+  public deleteProjects(id: string) {
+    this.projectService.deleteProjects(id).subscribe({
+      next: () => {
+        this.toastr.success('Item deleted');
+        this.getProjects()
+      }
+    })
+  }
+
+  public alterarProjects(dto: Projects) {
+    console.log(dto)
+    dto.id = dto._id
+    this.projectService.putProjects(dto).subscribe({
+      next: () => {
+        this.toastr.success('Item changed');
+        this.getProjects()
       }
     })
   }

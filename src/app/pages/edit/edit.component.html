@@ -59,6 +59,15 @@
       <input type="text" pInputText formControlName="image">
       <button pButton label="create" (click)="createSoftSkill(formSoftSkills.value)"></button>
     </form>
+    <form *ngSwitchCase="'Projects'" [formGroup]="formProject">
+      <label>Project</label>
+      <input type="text" pInputText formControlName="project">
+      <label>Description</label>
+      <input type="text" pInputText formControlName="description">
+      <label>Image Path</label>
+      <input type="text" pInputText formControlName="imagePath">
+      <button pButton label="create" (click)="createProjects(formProject.value)"></button>
+    </form>
   </div>
 </p-dialog>
 
@@ -489,6 +498,67 @@
               <td class="buttonset">
                 <button pButton icon="pi pi-save" (click)="alterarSoftSkill(softSkill)"></button>
                 <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteSoftSkill(softSkill._id)"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="row mt-5">
+      <div class="col">
+        <span class="title-plus">
+          <h2>Edit Projects</h2>
+          <button pButton icon="pi pi-plus" (click)="display = true; tipoDialog = 'Projects'"></button>
+        </span>
+        <p-table [value]="projects">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Projects</th>
+              <th style="width: 50%;">Description</th>
+              <th>imagePath</th>
+              <th style="width: 10%;">action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-project>
+            <tr>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="project.project">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{project.project}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="project.description">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{project.description}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <textarea pInputTextarea [autoResize]="true" type="text" [(ngModel)]="project.imagePath">
+                    </textarea>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{project.imagePath}}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="buttonset">
+                <button pButton icon="pi pi-save" (click)="alterarProjects(project)"></button>
+                <button pButton icon="pi pi-times" class="p-button-danger" (click)="deleteProjects(project._id)"></button>
               </td>
             </tr>
           </ng-template>

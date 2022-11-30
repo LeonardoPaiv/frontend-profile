@@ -5,6 +5,7 @@ import { CertificatesResolverGuard } from '../guards/certificates-resolver.guard
 import { EducationResolverGuard } from '../guards/education-resolver.guard';
 import { EmploymentHistoryResolverGuard } from '../guards/employment-history-resolver.guard';
 import { ProfileResolverGuard } from '../guards/profile-resolver.guard';
+import { ProjectsGuard } from '../guards/projects.guard';
 import { ShortCoursesResolverGuard } from '../guards/short-courses-resolver.guard';
 import { SkillsResolverGuard } from '../guards/skills-resolver.guard';
 import { SoftSkillsResolverGuard } from '../guards/soft-skills-resolver.guard';
@@ -21,6 +22,7 @@ const routes: Routes = [
       education: EducationResolverGuard,
       employmentHistory: EmploymentHistoryResolverGuard,
       certificates: CertificatesResolverGuard,
+      projects: ProjectsGuard,
       shortCourses: ShortCoursesResolverGuard,
       skills: SkillsResolverGuard,
       softSkills: SoftSkillsResolverGuard,
@@ -44,6 +46,7 @@ const routes: Routes = [
       shortCourses: ShortCoursesResolverGuard,
       skills: SkillsResolverGuard,
       softSkills: SoftSkillsResolverGuard,
+      projects: ProjectsGuard,
     }
   }
 ];

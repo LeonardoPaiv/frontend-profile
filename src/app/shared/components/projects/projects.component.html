@@ -1,14 +1,15 @@
 <div class="row">
-    <div class="col">
-        <h3 class="projectTitle">Projects</h3>
-        <div *ngFor="let project of projects; index as i" class="projectBox {{i % 2 == 0 ? 'row text-start normal' : 'row text-end reverse'}}">
-            <div class="col-sm-5">
-                <img class="projectImage" [src]="project.imagePath" alt="project.project">
-            </div>
-            <div class="col content">
-                <h3 class="">{{project.project}}</h3>
-                <p>{{project.description}}</p>
-            </div>
-        </div>
+  <div class="col">
+    <h3 class="projectTitle">Projects</h3>
+    <div *ngFor="let project of projects; index as i"
+      class="projectBox {{i % 2 == 0 ? 'row text-start normal' : 'row text-end reverse'}}">
+      <div class="col-sm-5">
+        <img class="projectImage" [src]="project.imagePath" alt="project.project">
+      </div>
+      <div class="col content">
+        <h3 class="">{{project.project}}</h3>
+        <p>{{project.description}}</p>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,6 +1,7 @@
 export interface Projects {
-  title: String,
+  id: any;
+  _id: any;
+  project: String,
   description: String,
-  router: String,
-  path: String
+  imagePath: String,
 }
